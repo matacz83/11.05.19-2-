@@ -2,11 +2,13 @@ package pl.sda.ex2;
 
 import java.util.List;
 
-public class MinValueSeeker implements ValueSeeker {
+class MinValueSeeker implements ValueSeeker {
 
     @Override
     public Integer find(List<Integer> values) {
-        validate(values);
+        InputValidator validator = new InputValidator();
+        validator.validate((values));
+
 
         Integer min = Integer.MAX_VALUE;
 
@@ -17,11 +19,5 @@ public class MinValueSeeker implements ValueSeeker {
         }
 
         return min;
-    }
-
-    private void validate(List<Integer> values) {
-        if (values == null || values.isEmpty()) {
-            throw new EmptyListException("Lista nie może być pusta!");
-        }
     }
 }

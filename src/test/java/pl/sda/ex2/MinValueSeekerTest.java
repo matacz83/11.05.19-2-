@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 public class MinValueSeekerTest {
 
     @Test
-    public void shouldFind10AsMaxElement() {
+    public void shouldFind1AsMinElement() {
         //given
         final Integer expectedMin = 1;
         final List<Integer> elements = Arrays.asList(1, 6, 8, 10, 5, 2, 6, 7, 2, 7, 3);

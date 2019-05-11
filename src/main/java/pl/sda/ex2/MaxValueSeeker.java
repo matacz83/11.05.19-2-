@@ -2,11 +2,12 @@ package pl.sda.ex2;
 
 import java.util.List;
 
-public class MaxValueSeeker implements ValueSeeker {
+class MaxValueSeeker implements ValueSeeker {
 
     @Override
     public Integer find(List<Integer> values) {
-        validate(values);
+        InputValidator validator = new InputValidator();
+        validator.validate((values));
 
         Integer max = Integer.MIN_VALUE;
 
@@ -17,11 +18,5 @@ public class MaxValueSeeker implements ValueSeeker {
         }
 
         return max;
-    }
-
-    private void validate(List<Integer> values) {
-        if (values == null || values.isEmpty()) {
-            throw new EmptyListException("Lista nie może być pusta!");
-        }
     }
 }
